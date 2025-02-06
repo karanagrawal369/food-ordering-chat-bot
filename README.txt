@@ -2,7 +2,6 @@
 
 This project is an AI-driven food ordering chatbot built using **FastAPI** and **Dialogflow**, with a frontend for users to browse and place orders. The application is containerized using **Docker** and deployed on **Render** for easy access.  
 
-🔗 **Live Demo**: [Click Here](https://your-app-name.onrender.com) 🚀  
 
 ---
 
