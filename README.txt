@@ -1,27 +1,57 @@
-Directory structure
-===================
-backend: Contains Python FastAPI backend code
-db: contains the dump of the database. you need to import this into your MySQL db by using MySQL workbench tool
-dialogflow_assets: this has training phrases etc. for our intents
-frontend: website code
+# **AI-Powered Food Ordering Chatbot** 🍔🤖  
 
-Install these modules
-======================
+This project is an AI-driven food ordering chatbot built using **FastAPI** and **Dialogflow**, with a frontend for users to browse and place orders. The application is containerized using **Docker** and deployed on **Render** for easy access.  
 
-pip install mysql-connector
-pip install "fastapi[all]"
+🔗 **Live Demo**: [Click Here](https://your-app-name.onrender.com) 🚀  
 
-OR just run pip install -r backend/requirements.txt to install both in one shot
+---
 
-To start fastapi backend server
-================================
-1. Go to backend directory in your command prompt
-2. Run this command: uvicorn main:app --reload
+## **📂 Files in the Repository**  
 
-ngrok for https tunneling
-================================
-1. To install ngrok, go to https://ngrok.com/download and install ngrok version that is suitable for your OS
-2. Extract the zip file and place ngrok.exe in a folder.
-3. Open windows command prompt, go to that folder and run this command: ngrok http 80000
+### **Backend** (`backend/`)  
+- `main.py` → Entry point for the API  
+- `db_helper.py` → Database functions (excluded from GitHub for security)  
+- `generic_helper.py` → Utility functions  
 
-NOTE: ngrok can timeout. you need to restart the session if you see session expired message.
+### **Frontend** (`frontend/`)  
+- `home.html` → Main frontend page  
+- `styles.css` → Styling for the web page  
+- `menu1.jpg`, `menu2.jpg`, `menu3.jpg` → Menu images  
+
+### **Other Files**  
+- `dialogflow_assets/` → Training phrases for chatbot responses  
+- `Dockerfile` → Used to containerize the application  
+- `requirements.txt` → Python dependencies for the project  
+- `ngrok.exe` → Used for local tunneling (for Dialogflow testing)  
+- `README.md` → Project documentation  
+
+---
+
+## **✨ Features**  
+
+✔️ **AI-powered Chatbot** → Uses Dialogflow for natural language processing  
+✔️ **FastAPI Backend** → Lightweight and efficient API for handling food orders  
+✔️ **Interactive Web Interface** → Users can browse the menu and place orders  
+✔️ **Database Integration** → Stores user orders and menu details (SQLite/MySQL)  
+✔️ **Containerized with Docker** → Runs consistently across different environments  
+✔️ **Deployed on Render** → Live and accessible online  
+
+---
+
+## **🛠️ Technologies Used**  
+
+- **Backend**: FastAPI, Python  
+- **Chatbot**: Dialogflow (Natural Language Understanding)  
+- **Database**: SQLite/MySQL  
+- **Frontend**: HTML, CSS  
+- **Deployment**: Docker, Render  
+
+---
+
+## **🚀 Deployment Guide**  
+
+### **1️⃣ Dockerize the Project**  
+
+```sh
+docker build -t food-ordering-bot .
+docker run -p 5500:5500 food-ordering-bot
